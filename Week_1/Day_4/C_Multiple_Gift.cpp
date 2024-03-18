@@ -4,24 +4,19 @@ using namespace std;
 
 int main()
 {
-    long long X, Y;
+    long long int X, Y;
     cin >> X >> Y;
 
-    long long maxLength = 1;
+    long long int count = 1;
+    long long int curr = X;
 
-    for (long long i = X; i <= Y; i++)
+    while (curr * 2 <= Y)
     {
-        long long length = 1;
-        long long current = i;
-        while (current <= Y / 2)
-        {
-            current *= 2;
-            length++;
-        }
-        maxLength = max(maxLength, length);
+        curr *= 2;
+        count++;
     }
 
-    cout << maxLength << endl;
+    cout << count << endl;
 
     return 0;
 }
